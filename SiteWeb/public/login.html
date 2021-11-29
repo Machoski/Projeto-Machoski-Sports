@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MachoskiSports-Login</title>
+
+    <script src="./js/funcoes.js"></script>
+    <link rel="icon" href="./img/bola-icon.png">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <div id="navbar" class="header">
+        <div class="container">
+            <div class="img_header">
+                <a href="home.html"><img src="./img/icon.png"></a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="home.html">Início</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="banner">
+            <div class="boxes">
+                <div class="box_cadastro" onclick="exibir_cadastro()">
+                    <p>Cadastre-se na</p>
+
+                    <img class="img_boxs" src="./img/icon.png">
+
+                    <div class="inputs" id="cadastro_inputs" style="display: none;">
+                        <div id="form_cadastro">
+                            <input type="text" id="nome_input" placeholder="Nome Completo">
+                            <input type="email" id="email_input" placeholder="E-mail válido">
+                            <input type="password" id="senha_input" placeholder="Senha">
+                            <input type="password" id="confirmacao_senha_input" placeholder="Confirme a senha"><br>
+
+                            <button class="botao_cadastro" onclick="cadastrar()">
+                                Cadastre-se
+                                <div class="botao_icon">
+                                    <img src="./img/arrow.png.svg" alt="">
+                                </div>
+                            </button>
+                        </div>
+                        <div id="div_aguardar" class="loading-div">
+                            <img src="./img/circle-loading.gif" id="loading-gif">
+                        </div>
+
+                        <div id="div_erros_login">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="barra"></div>
+                <div class="box_login" onclick="exibir_login()">
+                    <p>Faça seu login</p>
+                    <img class="img_boxs" src="./img/icon.png">
+                    <div class="inputs" id="login_inputs" style="display: none;">
+                        <input type="email" id="email_input" placeholder="E-mail">
+                        <input type="password" id="senha_input" placeholder="Senha">
+                        <a class="botao_container">
+                            <button class="botao_login" onclick="entrar()">
+                                Login
+                                <div class="botao_icon">
+                                    <img src="./img/arrow.png.svg" alt="">
+                                </div>
+                            </button>
+                        </a><br>
+                    </div>
+                    <div id="div_aguardar" class="loading-div">
+                        <img src="./img/circle-loading.gif" id="loading-gif">
+                    </div>
+
+                    <div id="div_erros_login">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function exibir_cadastro() {
+                cadastro_inputs.style.display = "block";
+                login_inputs.style.display = "none"
+                login_inputs.style.transition = `0.5s`;
+            }
+
+            function exibir_login() {
+                cadastro_inputs.style.display = "none";
+                login_inputs.style.display = "block"
+                login_inputs.style.transition = `0.5s`;
+            }
+</script>
+<script>
+            function cadastrar() {
+                aguardar();
+
+                var nomeVar = nome_input.value;
+                var emailVar = email_input.value;
+                var senhaVar = senha_input.value;
+                var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+                if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+
+                    window.alert("Preencha todos os campos para prosseguir!");
+                    if (nomeVar == "") {
+                        console.log('nome está em branco')
+                    }
+                    if (emailVar == "") {
+                        console.log('email está em branco')
+                    }
+                    if (senhaVar == "") {
+                        console.log('senha está em branco')
+                    }
+                    if (confirmacaoSenhaVar == "") {
+                        console.log('confirmacaoSenha está em branco')
+                    }
+                    finalizarAguardar();
+                    return false;
+                }
+
+                if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+                    window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+                    finalizarAguardar();
+                    return false;
+                }
+
+                if (senhaVar != confirmacaoSenhaVar) {
+                    window.alert("As senhas inseridas devem ser iguais para prosseguir!");
+                    finalizarAguardar();
+                    return false;
+                }
+
+                fetch("/usuarios/cadastrar", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        nomeServer: nomeVar,
+                        emailServer: emailVar,
+                        senhaServer: senhaVar
+                    })
+                }).then(function (resposta) {
+
+                    console.log("resposta: ", resposta);
+
+                    if (resposta.ok) {
+                        window.alert("Cadastro realizado com sucesso!");
+                        window.location = "login.html";
+                        limparFormulario();
+                        finalizarAguardar();
+                    } else {
+                        throw ("Houve um erro ao tentar realizar o cadastro!");
+                    }
+                }).catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+                    finalizarAguardar();
+                });
+
+                return false;
+            }
+
+        </script>
+        <script>
+            function entrar() {
+                aguardar();
+        
+                var emailVar = email_input.value;
+                var senhaVar = senha_input.value;
+        
+                console.log("FORM LOGIN: ", emailVar);
+                console.log("FORM SENHA: ", senhaVar);
+        
+                // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+                if (emailVar == "" || senhaVar == "") {
+                    window.alert("Preencha todos os campos para prosseguir!");
+                    finalizarAguardar();
+                    return false;
+                }
+        
+                if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+                    window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+                    finalizarAguardar();
+                    return false;
+                }
+        
+                fetch("/usuarios/autenticar", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        emailServer: emailVar,
+                        senhaServer: senhaVar
+                    })
+                }).then(function (resposta) {
+                    console.log("ESTOU NO THEN DO entrar()!")
+        
+                    if (resposta.ok) {
+                        console.log(resposta);
+        
+                        resposta.json().then(json => {
+                            console.log(json);
+                            console.log(JSON.stringify(json));
+        
+                            sessionStorage.EMAIL_USUARIO = json.email;
+                            sessionStorage.NOME_USUARIO = json.nome;
+                            sessionStorage.ID_USUARIO = json.id;
+        
+                            setTimeout(function () {
+                                window.location = "./dashboard/cards.html";
+                            }, 1000); // apenas para exibir o loading
+        
+                        });
+        
+                    } else {
+        
+                        console.log("Houve um erro ao tentar realizar o login!");
+        
+                        resposta.text().then(texto => {
+                            console.error(texto);
+                            finalizarAguardar(texto);
+                        });
+                    }
+        
+                }).catch(function (erro) {
+                    console.log(erro);
+                })
+        
+                return false;
+            }
+        
+        </script>

@@ -1,0 +1,97 @@
+body {
+    font-family: 'Montserrat', sans-serif !important;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('/img/EEsQ65MXkAE5ko6.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* SCROLL */
+
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #595959;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #595959;
+}
+
+
+/* FIM DA SCROLL*/
+
+
+/* FIM GLOBAL */
+
+.container {
+    width: 90%;
+    height: auto;
+    margin: auto;
+}
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #595959;
+    z-index: 1000;
+    box-shadow: 10px 5px 5px rgb(0 0 0 / 25%)
+}
+
+.header .container {
+    display: flex;
+    height: 65px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.img_header img {
+    height: 4vh;
+    cursor: pointer;
+    box-shadow: 1px 5px 5px rgb(0 0 0 / 25%)
+}
+
+.nav {
+    float: right;
+}
+
+.nav a {
+    position: relative;
+    font-size: 15px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    color: #FFD966;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    width: 100%;
+}
+
+.nav li {
+    display: unset;
+    padding: 0px 0px 0px 35px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.nav ul {
+    float: left;
+}

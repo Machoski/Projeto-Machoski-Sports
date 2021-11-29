@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calculadora</title>
+    <script type="text/javascript"
+        src="https://www.sofascore.com/bundles/sofascoreweb/js/bin/util/embed.min.js%22%3E"></script>
+    <link rel=" icon " href="/img/bola-icon.png ">
+    <link rel="stylesheet " href="/css/calculadora.css ">
+    <link rel="preconnect " href="https://fonts.googleapis.com ">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap " rel="stylesheet ">
+    <!-- TODOS OS ICONS DA TELA -->
+    <link rel="stylesheet " href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css "
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p " crossorigin="anonymous " />
+</head>
+
+<body>
+
+    <div id="navbar " class="header ">
+        <div class="container ">
+            <div class="img_header ">
+                <a href="index.html "><img class="icon " src="img/icon.png "></a>
+            </div>
+            <div class="nav ">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="home.html ">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container ">
+        <div class="frase">
+            <span>
+                <h1>Calcule aqui o valor do seu sócio!</h1>
+            </span>
+        </div>
+        <div class="box">
+            Quanto você gostaria de gastar assistindo seu time neste mês? <input type="number" id="ipt_mes"
+                placeholder="Entre com o valor em R$"><br>
+            Quantos jogos você gostaria de assistir? <input type="number" id="ipt_jogos"><br>
+            <button onclick="cadastrar()">Cadastrar</button>
+
+            <div id="div_msg"></div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="./js/calculadora.js"></script>

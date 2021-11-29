@@ -1,0 +1,249 @@
+body {
+    font-family: 'Montserrat', sans-serif !important;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* SCROLL */
+
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #595959;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #595959;
+}
+
+
+/* FIM GLOBAL */
+
+.container {
+    width: 90%;
+    height: auto;
+    margin: auto;
+}
+
+
+/* NAVBAR */
+
+.header {
+    width: 90%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #595959;
+    z-index: 1000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 0 5%;
+}
+
+.header .container {
+    display: flex;
+    height: 65px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.img_header img {
+    height: 4vh;
+    cursor: pointer;
+    box-shadow: 1px 4px 10px rgb(0 0 0 / 25%);
+}
+
+.nav {
+    float: right;
+}
+
+.nav a {
+    position: relative;
+    font-size: 15px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    color: #FFD966;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    width: 100%;
+}
+
+.nav li {
+    display: unset;
+    padding: 0px 0px 0px 10px;
+}
+
+.nav ul {
+    float: left;
+    margin-right: 10px;
+}
+
+.banner {
+    padding-top: 3%;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #fff;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.75)), url('../img/beira-rio-começa-a-encher-pra-final-da-copa-do-brasil.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 70%;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px 5px #7a7a7ab0;
+    backdrop-filter: blur(4px);
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.img_boxs {
+    box-shadow: 1px 4px 10px rgb(0 0 0 / 25%);
+    height: 5vh;
+    margin-bottom: 15%;
+    transition: 0.3s;
+}
+
+.barra {
+    height: 50%;
+    border: 1px solid #595959;
+    margin: 0 8%;
+}
+
+input {
+    border-style: solid;
+    border-color: #FFD966;
+    padding: 5% 5%;
+    font-size: 2vh;
+    margin-bottom: 2vh;
+    transition: 0.3s;
+    outline: none;
+}
+
+.box_login .sel_times2 {
+    font-family: 'Montserrat', sans-serif;
+    border-style: solid;
+    border-color: #FFD966;
+    padding: 5% 5%;
+    font-size: 10pt;
+    width: 100%;
+    margin-bottom: 2vh;
+    outline: none;
+}
+
+.box_login {
+    width: 27%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.box_cadastro {
+    width: 27%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.box_cadastro .sel_times1 {
+    font-family: 'Montserrat', sans-serif;
+    border-style: solid;
+    border-color: #FFD966;
+    padding: 5% 5%;
+    font-size: 10pt;
+    width: 100%;
+    margin-bottom: 2vh;
+    outline: none;
+}
+
+.botao_login {
+    font-size: 11pt;
+    font-family: 'Montserrat', sans-serif;
+    color: #FFD966;
+    background-color: rgba(245, 245, 245, 0.26);
+    border-style: none;
+    border-radius: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 0% 0 23%;
+}
+
+.botao_icon {
+    background-color: #FFD966;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6.5vh;
+    height: 6.5vh;
+    margin-left: 2vh;
+    border-radius: 1px;
+}
+
+.botao_icon:hover {
+    background-color: #FEAA00;
+}
+
+.botao_icon img {
+    width: 3.5vh;
+}
+
+.botao_cadastro {
+    font-size: 11pt;
+    font-family: 'Montserrat', sans-serif;
+    color: #FFD966;
+    background-color: rgba(245, 245, 245, 0.26);
+    border-style: none;
+    border-radius: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 0% 0 23%;
+}
+.loading-div {
+    width: 50px;
+    /* border: 3px solid pink; */
+    margin: auto;
+    display: none;
+  }
+  
+  .loading-div img {
+    height: 50px;
+    width: 50px;
+  }
