@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Bem vindo!</title>
-    <script src="./js/funcoes.js"></script>
-    <script type="text/javascript" src="https://www.sofascore.com/bundles/sofascoreweb/js/bin/util/embed.min.js%22%3E"></script>
-    <link rel=" icon " href="/img/bola-icon.png ">
-    <link rel="stylesheet " href="/css/index.css ">
-    <link rel="preconnect " href="https://fonts.googleapis.com ">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap " rel="stylesheet ">
+    <title>MachoskiSports</title>
+
+    <link rel="icon" href="./img/bola-icon.png">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -19,76 +19,95 @@
     <div id="navbar" class="header">
         <div class="container">
             <div class="img_header">
-                <a href="index.html"><img class="icon" src="img/icon.png"></a>
+                <a href="#sectionWelcome"><img class="icon" src="img/icon.png"></a>
             </div>
             <div class="nav">
                 <ul>
-                    <li>Olá seja bem vindo <b id="b_usuario"></b></li>
-                    <li><a href="calculadora.html">Calculadora</a></li>
-                    <li><a href="home.html ">Sair</a></li>
+                    <li><a href="#sectionWelcome">Início</a></li>
+                    <li><a href="#section_quemsomos">Quem somos</a></li>
+                    <li><a href="login.html">Login</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <div class="container ">
-        <section class="sectionindex ">
-            <div class="box ">
-                <div class="boxInf ">
-                    <div class="textBox">Seu time do coração!</div>
-                    <select onchange="mostrar()" name="times" id="sel_times" class="sel_times1">
-                        <option value="null">Selecione um time...</option>
-                        <option value="/img/inter.png">Internacional</option>
-                        <option value="/img/atl_mineiro.png">Atlético Mineiro</option>
-                        <option value="/img/bahia.png">Bahia</option>
-                        <option value="/img/flamengo.png">Flamengo</option>
-                        <option value="/img/fluminse.png">Fluminense</option>
-                        <option value="/img/escudo-juv.gif">Juventude</option>
-                        <option value="/img/ceara.png">Ceara</option>
-                        <option value="/img/corinthians.png">Corinthians</option>
-                        <option value="/img/saopaulo.png">São Paulo</option>
-                        <option value="/img/palmeiras.png">Palmeiras</option>
-                        <option value="/img/Fortaleza.png">Fortaleza</option>
-                        <option value="/img/atletico-pr-logo.png">Atlético Paranaense</option>
-                        <option value="/img/gremio.png">Grêmio</option>
-                        <option value="/img/logo-red-bull-bragantino-1024.png">RB Bragantino</option>
-                        <option value="/img/santos.png">Santos</option>
-                        <option value="/img/sport-recife-logo-escudo-2.png">Sport</option>
-                        <option value="/img/chapecoense-logo-shield-4.png">Chapecoense</option>
-                        <option value="/img/logo-cuiaba2048.png">Cuiabá</option>
-                        <option value="/img/america-mineiro.png">América Mineiro</option>
-                        <option value="/img/atletico-go.png">Atlético Go</option>
-                    </select>
-                    <img id="id_img" src="" alt="">
-                </div>
-                <div class="boxInf ">
-                    <div class="textBox">Melhores da semana</div>
-                    <iframe id="sofa-totw-embed-325-36166-6466" width="100%" height="500" style="display:block;max-width:440px" src="https://www.sofascore.com/tournament/325/36166/6466/team-of-the-week/embed" frameBorder="0" scrolling="no"></iframe>
-                    </script>
-                </div>
-                <div class="boxInf ">
-                    <div class="textBox">Tabela Brasileirão</div>
-                    <iframe id="sofa-standings-embed-83-36166" width="100%" height="300" src="https://www.sofascore.com/tournament/83/36166/standings/tables/embed" frameborder="0" scrolling="no" style="height:717px!important">  </iframe>
+    <section id="sectionWelcome" class="sectionWelcome">
 
+        <div class="banner">
+
+            <div class="times">
+                <img src="./img/atletico-pr-logo.png " alt=" ">
+                <img src="./img/flamengo.png " alt=" ">
+                <img src="./img/vasco.png" alt=" ">
+                <img src="./img/corinthians.png " alt=" ">
+                <img src="./img/palmeiras.png " alt="">
+                <img src="./img/inter.png " alt=" ">
+                <img src="./img/saopaulo.png " alt=" ">
+                <img src="./img/bahia.png " alt=" ">
+                <img src="./img/santos.png " alt=" ">
+                <img src="./img/atl_mineiro.png " alt=" ">
+            </div>
+
+            <div class="div_texto ">
+                <h1><span>B</span>em-Vindo!</h1>
+                <p class="banner_text ">
+                    A vida é como um jogo de futebol, cada lance pode definir sua trajetória.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="section_quemsomos" class="section_quemsomos">
+
+        <div class="container ">
+
+            <center>
+                <div class="textitulo">
+                    <h1>Quem Somos?</h1>
+                </div>
+            </center>
+
+            <div class="espacosobrenos ">
+                <div class="textQSomos ">
+                    <h1>Machoski Sport</h1>
+                    <p class="banner_text ">
+                        Uma empresa focada em trazer sempre o sócio torcedor até você! Venha fazer parte de nossa estrutura!<br> Para mais informações, cadastre-se e entre em um mundo novo.
+
+                    </p>
+                </div>
+                <img id="id_img" alt="" src="./img/machoski-logo.jpg">
+            </div>
+
+            <div class="espacosobrenos ">
+                <video src="./img/GloriousCluelessKillerwhale.mp4" muted loop autoplay></video>
+                <div class="textQSomos ">
+                    <h1>Desde o inicio</h1>
+                    <p class="banner_text ">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias pariatur nesciunt quae culpa, facere repellat eos ipsum nisi illum in cum qui odio sint rem eligendi mollitia nostrum, repellendus dolore. Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Molestias pariatur nesciunt quae culpa, facere repellat eos ipsum nisi illum in cum qui odio sint rem eligendi mollitia nostrum,
+                    </p>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
+    <footer>
+        <div class="conteudoFooter">
+            <p>Feito com amor e dedicação por um aluno da BandTec ❤</p>
+            <ul class="redesSociais">
+                <a href="#" class="boton-redes linkedin fab fa-linkedin"><i class="icon-linkedin"></i></a>
+                <a href="#" class="boton-redes github fab fa-github"><i class="icon-github"></i></a>
+                <a href="#" class="boton-redes instagram fab fa-instagram"><i class="icon-instagram"></i></a>
+            </ul>
+        </div>
+        <div class="fimFooter">
+            <p>copyright&copy; 2021. Developed by <span>Carlos Machoski ❤</span></p>
+        </div>
+    </footer>
 
 </body>
 
 </html>
-
-<script>
-    (function(el) {
-        window.addEventListener("message", (event) => {
-            if (event.origin.startsWith("https://www.sofascore")) {
-                if (el.id === event.data.id) {
-                    el.style.height = event.data.height + "px";
-                }
-            }
-        });
-    })(document.getElementById("sofa-standings-embed-83-36166"));
-</script>
-<script src="js/timeCoracao.js"></script>

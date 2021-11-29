@@ -1,5 +1,22 @@
+function validarSessao() {
+
+    var login = sessionStorage.LOGIN_USUARIO;
+    var nome = sessionStorage.NOME_USUARIO;
+
+    var h1Titulo = document.getElementById("h1_titulo");
+
+    if (login != null && nome != null) {
+        window.alert(`Seja bem-vindo, ${nome}!`);
+        h1Titulo.innerHTML = `${login}`;
+
+        finalizarAguardar();
+    } else {
+        window.location = "login.html";
+    }
+}
+
+
 function entrar() {
-    aguardar();
 
     var formulario = new URLSearchParams(new FormData(document.getElementById("form_login")));
 
@@ -46,27 +63,8 @@ function entrar() {
     return false;
 }
 
-function validarSessao() {
-    aguardar();
-
-    var login = sessionStorage.LOGIN_USUARIO;
-    var nome = sessionStorage.NOME_USUARIO;
-
-    var h1Titulo = document.getElementById("h1_titulo");
-
-    if (login != null && nome != null) {
-        // window.alert(`Seja bem-vindo, ${nome}!`);
-        h1Titulo.innerHTML = `${login}`;
-
-        finalizarAguardar();
-    } else {
-        window.location = "login.html";
-    }
-}
 
 function sair() {
-    aguardar();
     sessionStorage.clear();
-    finalizarAguardar();
     window.location = "login.html";
 }

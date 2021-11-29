@@ -247,3 +247,6 @@ input {
     height: 50px;
     width: 50px;
   }
+  #div_erros_login{
+    margin-top: 15px;
+  }

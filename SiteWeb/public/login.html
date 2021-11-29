@@ -44,7 +44,7 @@
                             <input type="password" id="senha_input" placeholder="Senha">
                             <input type="password" id="confirmacao_senha_input" placeholder="Confirme a senha"><br>
 
-                            <button class="botao_cadastro" onclick="cadastrar()">
+                            <button onclick="cadastrar()">
                                 Cadastre-se
                                 <div class="botao_icon">
                                     <img src="./img/arrow.png.svg" alt="">
@@ -66,8 +66,8 @@
                     <p>Faça seu login</p>
                     <img class="img_boxs" src="./img/icon.png">
                     <div class="inputs" id="login_inputs" style="display: none;">
-                        <input type="email" id="email_input" placeholder="E-mail">
-                        <input type="password" id="senha_input" placeholder="Senha">
+                        <input type="email" id="email_input2" placeholder="E-mail">
+                        <input type="password" id="senha_input2" placeholder="Senha">
                         <a class="botao_container">
                             <button class="botao_login" onclick="entrar()">
                                 Login
@@ -79,11 +79,11 @@
                     </div>
                     <div id="div_aguardar" class="loading-div">
                         <img src="./img/circle-loading.gif" id="loading-gif">
+                        <div id="div_erros_login">
+
+                        </div>
                     </div>
 
-                    <div id="div_erros_login">
-
-                    </div>
                 </div>
             </div>
         </div>
@@ -100,10 +100,10 @@
                 login_inputs.style.display = "block"
                 login_inputs.style.transition = `0.5s`;
             }
-</script>
-<script>
+        </script>
+        <script>
             function cadastrar() {
-                aguardar();
+
 
                 var nomeVar = nome_input.value;
                 var emailVar = email_input.value;
@@ -149,7 +149,8 @@
                     body: JSON.stringify({
                         nomeServer: nomeVar,
                         emailServer: emailVar,
-                        senhaServer: senhaVar
+                        senhaServer: senhaVar,
+                        confirmacaoServer: confirmacaoSenhaVar
                     })
                 }).then(function (resposta) {
 
@@ -175,26 +176,26 @@
         <script>
             function entrar() {
                 aguardar();
-        
-                var emailVar = email_input.value;
-                var senhaVar = senha_input.value;
-        
+
+                var emailVar = email_input2.value;
+                var senhaVar = senha_input2.value;
+
                 console.log("FORM LOGIN: ", emailVar);
                 console.log("FORM SENHA: ", senhaVar);
-        
+
                 // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
                 if (emailVar == "" || senhaVar == "") {
                     window.alert("Preencha todos os campos para prosseguir!");
                     finalizarAguardar();
                     return false;
                 }
-        
+
                 if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
                     window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
                     finalizarAguardar();
                     return false;
                 }
-        
+
                 fetch("/usuarios/autenticar", {
                     method: "POST",
                     headers: {
@@ -206,39 +207,40 @@
                     })
                 }).then(function (resposta) {
                     console.log("ESTOU NO THEN DO entrar()!")
-        
+
                     if (resposta.ok) {
                         console.log(resposta);
-        
+
                         resposta.json().then(json => {
                             console.log(json);
                             console.log(JSON.stringify(json));
-        
+
                             sessionStorage.EMAIL_USUARIO = json.email;
                             sessionStorage.NOME_USUARIO = json.nome;
                             sessionStorage.ID_USUARIO = json.id;
-        
                             setTimeout(function () {
-                                window.location = "./dashboard/cards.html";
+                                window.location = "home.html";
                             }, 1000); // apenas para exibir o loading
-        
+
+                            validarSessao();
+
                         });
-        
+
                     } else {
-        
+
                         console.log("Houve um erro ao tentar realizar o login!");
-        
+
                         resposta.text().then(texto => {
                             console.error(texto);
                             finalizarAguardar(texto);
                         });
                     }
-        
+
                 }).catch(function (erro) {
                     console.log(erro);
                 })
-        
+
                 return false;
             }
-        
+
         </script>

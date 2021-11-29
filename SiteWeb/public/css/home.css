@@ -1,287 +1,146 @@
-    body {
-        font-family: 'Montserrat', sans-serif !important;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    html {
-        scroll-behavior: smooth;
-    }
-    /* SCROLL */
-    
-    *::-webkit-scrollbar {
-        width: 5px;
-    }
-    
-    *::-webkit-scrollbar-track {
-        background: #595959;
-    }
-    
-    *::-webkit-scrollbar-thumb {
-        background-color: #595959;
-    }
-    /* FIM DA SCROLL*/
-    /* FIM GLOBAL */
-    
-    .container {
-        width: 90%;
-        height: auto;
-        margin: auto;
-    }
-    
-    .header {
-        width: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: #595959;
-        z-index: 1000;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-    
-    .header .container {
-        display: flex;
-        height: 65px;
-        align-items: center;
-        justify-content: space-between;
-    }
-    
-    .img_header img {
-        height: 4vh;
-        cursor: pointer;
-        box-shadow: 1px 4px 10px rgb(0 0 0 / 25%);
-    }
-    
-    .nav {
-        float: right;
-    }
-    
-    .nav a {
-        position: relative;
-        font-size: 15px;
-        color: #fff;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: bold;
-    }
-    
-    .nav a:hover {
-        color: #FFD966;
-        text-decoration: none;
-    }
-    
-    .nav a:hover {
-        width: 100%;
-    }
-    
-    .nav li {
-        display: unset;
-        padding: 0px 0px 0px 10px;
-    }
-    
-    .nav ul {
-        float: left;
-        margin-right: 10px;
-    }
-    
-    .sectionWelcome {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .times {
-        display: flex;
-        width: 90%;
-        align-content: center;
-        justify-content: space-evenly;
-        align-items: center;
-        height: 30vh;
-    }
-    
-    .times img {
-        width: 4vw;
-    }
-    
-    .times img {
-        -moz-transition: all 0.3s;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3;
-    }
-    
-    .times img:hover {
-        -moz-transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-    }
-    
-    .banner {
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        color: #fff;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../img/Schreder-lights-Mineirao-Stadium-Brazil-FIFA-World-Cup-2014.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        width: 100%;
-        box-shadow: 10px 5px 5px rgb(0 0 0 / 25%)
-    }
-    
-    .div_texto {
-        width: 80%;
-        text-align: justify;
-        display: flex;
-        flex-direction: column;
-        font-size: 22pt;
-        color: whitesmoke;
-        font-weight: bold;
-        align-items: center;
-    }
-    
-    .div_texto h1 {
-        margin: 0 0 3%;
-        font-size: 40pt;
-    }
-    
-    .div_texto span {
-        color: #FFD966;
-    }
-    
-    .section_quemsomos {
-        width: 100%;
-        display: flex;
-    }
-    
-    .textitulo {
-        padding: 5% 0 0;
-        margin-bottom: 1%;
-        font-size: 20pt;
-        width: 30%;
-        display: flex;
-        justify-content: center;
-    }
-    
-    .espacosobrenos {
-        display: flex;
-        height: 70vh;
-        align-items: center;
-        text-align: center;
-        justify-content: space-evenly;
-        width: 100%;
-        border: solid 2px rgb(177, 177, 177);
-        box-shadow: 1px 4px 10px rgb(0 0 0 / 25%);
-        margin-bottom: 10%;
-    }
-    
-    .espacosobrenos img {
-        width: 35vw;
-        box-shadow: 1px 4px 10px rgb(0 0 0 / 25%);
-    }
-    
-    .espacosobrenos video {
-        width: 35vw;
-        box-shadow: 1px 4px 10px rgb(0 0 0 / 25%);
-    }
-    
-    .textQSomos {
-        padding: 0 3%;
-        width: 37%;
-        text-align: justify;
-        display: flex;
-        flex-direction: column;
-        font-size: 15pt;
-        color: black;
-        font-weight: bold;
-        align-items: center;
-        border-right: solid 2px rgb(177, 177, 177);
-        border-left: solid 2px rgb(177, 177, 177);
-    }
-    
-    footer {
-        padding: 2px 0;
-        background-color: #242633;
-        height: auto;
-        color: #FCFEF0;
-    }
-    
-    .conteudoFooter {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .conteudoFooter p {
-        max-width: 500px;
-        margin: 10px auto;
-        line-height: 28px;
-        font-size: 14px;
-    }
-    
-    .redesSociais {
-        list-style: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .redesSociais li {
-        /* margin: 0 10px; */
-    }
-    
-    .redesSociais a {
-        padding: 25%;
-        text-decoration: none;
-        color: #FCFEF0;
-        font-size: 30pt;
-    }
-    
-    .redesSociais a {
-        -moz-transition: all 0.3s;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3;
-    }
-    
-    .redesSociais a:hover {
-        -moz-transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-    }
-    
-    .redesSociais a i {
-        font-size: 30px;
-        transition: 3s;
-    }
-    
-    .redesSociais a:hover i {
-        font-weight: bolder;
-    }
-    
-    .fimFooter {
-        width: 100%;
-        text-align: center;
-    }
-    
-    .botaoFooter p {
-        padding: 0;
-        font-size: 14px;
-        word-spacing: 2px;
-        text-transform: capitalize;
-    }
-    
-    .botaoFooter span {
-        text-transform: uppercase;
-        font-weight: 200;
-    }
+body {
+    font-family: 'Montserrat', sans-serif !important;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('/img/EEsQ65MXkAE5ko6.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* SCROLL */
+
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #595959;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #595959;
+}
+
+
+/* FIM DA SCROLL*/
+
+
+/* FIM GLOBAL */
+
+.container {
+    width: 90%;
+    height: auto;
+    margin: auto;
+}
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #595959;
+    z-index: 1000;
+    box-shadow: 10px 5px 5px rgb(0 0 0 / 25%)
+}
+
+.header .container {
+    display: flex;
+    height: 65px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.img_header img {
+    height: 4vh;
+    cursor: pointer;
+    box-shadow: 1px 5px 5px rgb(0 0 0 / 25%)
+}
+
+.nav {
+    float: right;
+}
+
+.nav a {
+    position: relative;
+    font-size: 15px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    color: #FFD966;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    width: 100%;
+}
+
+.nav li {
+    display: unset;
+    padding: 0px 0px 0px 35px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.nav ul {
+    float: left;
+}
+
+.sectionindex {
+    padding: 3% 0% 0%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 100%;
+    height: 83vh;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #595959;
+    border-radius: 3px;
+    box-shadow: 10px 5px 5px rgb(0 0 0 / 25%)
+}
+
+.boxInf {
+    flex-direction: column;
+    display: flex;
+    align-content: center;
+    justify-content: start;
+    align-items: center;
+    width: 28%;
+    height: 72vh;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 10px 5px 5px rgb(0 0 0 / 25%);
+    padding: 1%;
+}
+
+.boxInf img {
+    height: 40vh;
+    margin-top: 23%;
+}
+
+.textBox {
+    border-bottom: solid 2px #d3d3d3;
+    padding: 0 0 3%;
+    font-size: 18pt;
+    margin-bottom: 2%;
+    font-weight: bold;
+}
